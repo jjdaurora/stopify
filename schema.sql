@@ -2,3 +2,5 @@
 DROP DATABASE IF EXISTS stopify;
 -- Creates the "stopify" database --
 CREATE DATABASE stopify;
+
+use stopify;
