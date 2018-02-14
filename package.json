@@ -1,0 +1,24 @@
+{
+  "name": "stopify",
+  "version": "1.0.0",
+  "description": "A parody version of Spotify. The music you love to hate.",
+  "main": "player.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjdaurora/stopify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjdaurora/stopify/issues"
+  },
+  "homepage": "https://github.com/jjdaurora/stopify#readme",
+  "dependencies": {
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.33.4"
+  }
+}
