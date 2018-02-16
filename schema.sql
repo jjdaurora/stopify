@@ -23,7 +23,7 @@ CREATE TABLE users
     track_name varchar (255) NOT NULL,
     track_artist varchar (255) NOT NULL,
     track_genre varchar (255) NOT NULL,
-    track_popularity VARCHAR (255) NOT NULL,
+    track_popularity integer (255) NOT NULL,
     PRIMARY KEY (track_id),
     user_id int NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (id)
