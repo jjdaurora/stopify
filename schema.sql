@@ -1,28 +1,37 @@
--- Drops the todolist if it exists currently --
-DROP DATABASE IF EXISTS app_db;
--- Creates the "stopify" database --
-CREATE DATABASE app_db;
+DROP DATABASE IF EXISTS stopify_db;
 
-use app_db;
+CREATE DATABASE stopify_db;
 
-CREATE TABLE `user`
-( `id` Int ( 11 ) AUTO_INCREMENT NOT NULL,
-  `email` VARCHAR ( 255) NOT NULL,
-  `favorite_spotify_track` VARCHAR ( 255 ) NOT NULL,
-  'likes' VARCHAR (255) not null,
-  'dislikes' varchar (255) not null,
-  'like_genre' VARCHAR (255) not null,
-  'dislike_genre' varchar (255) not null,
- PRIMARY KEY ( `id` ) );
+use stopify_db;
 
+CREATE TABLE users
+(
+  id int NOT NULL AUTO_INCREMENT,
+	user_name varchar (255) NOT NULL,
+    user_email varchar (255) NOT NULL,
+    user_liked_tracks varchar NOT NULL,
+    user_disliked_tracks varchar NOT NULL,
+    spotify_id int NOT NULL,
+    user_image varchar (255) NOT NULL,
+    user_subscription varchar (255) NOT NULL,
+	PRIMARY KEY (user_id)
+);
 
-create table 'music';
-('id' int (11) auto_increment not null,
-'artist_name' VARCHAR (255) not null,
-'genre' varchar (255) not null,
-'rating' varchar (255) not null,
-PRIMARY KEY ('id') );
+  CREATE TABLE music
+  (
+    id int AUTO_INCREMENT,
+    track_name varchar (255) NOT NULL,
+    track_artist varchar (255) NOT NULL,
+    track_genre varchar (255) NOT NULL,
+    track_popularity VARCHAR (255) NOT NULL,
+    PRIMARY KEY (track_id),
+    user_id int NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (id)
+);
 
-create table 'genre';
-('id' int (11) auto_increment not null,)
-
+    CREATE TABLE genres
+    (
+      id int AUTO_INCREMENT,
+    pseudo_genre varchar (255) NOT NULL,
+    FOREIGN KEY (track_id) REFERENCES music (id)
+);

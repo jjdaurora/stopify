@@ -22,16 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-// Static directory
-app.use(express.static("public"));
-
-// Routes
-// =============================================================
-require("./routes/api-routes.js")(app);
-
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-db.sequelize.sync().then(function () {
+// Syncing our sequelize models and then starting our express app
+db.sequelize.sync({ force: true }).then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });
