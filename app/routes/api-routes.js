@@ -1,35 +1,35 @@
 // *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
+// api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
 
 // Dependencies
 // =============================================================
-var path = require("path");
+
+// Grabbing our models
+
+var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function (app) {
+module.exports = function(app) {
 
-    // Each of the below routes just handles the HTML page that the user gets sent to.
+  // GET route for getting all of the todos
+  app.get("/api/todos", function(req, res) {
 
-    // index route loads view.html
-    app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/blog.html"));
-    });
+  });
 
-    // cms route loads cms.html
-    app.get("/cms", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/cms.html"));
-    });
+  // POST route for saving a new todo. You can create a todo using the data on req.body
+  app.post("/api/todos", function(req, res) {
 
-    // blog route loads blog.html
-    app.get("/blog", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/blog.html"));
-    });
+  });
 
-    // authors route loads author-manager.html
-    app.get("/authors", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-    });
+  // DELETE route for deleting todos. You can access the todo's id in req.params.id
+  app.delete("/api/todos/:id", function(req, res) {
 
+  });
+
+  // PUT route for updating todos. The updated todo will be available in req.body
+  app.put("/api/todos", function(req, res) {
+
+  });
 };
