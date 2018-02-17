@@ -3,23 +3,31 @@
   margin: 0;
   padding: 0;
   outline: none;
+
 }
 
-body
+.bg-gradient {
+    background: linear-gradient(180deg, rgb(26, 26, 26), rgb(153, 153, 153));
+}
+
+body, html
 {
   font-family: Verdana, sans-serif;
-  background: linear-gradient(45deg, #00dffc, #bbe7be);
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
-.container
+
+body .container
 {
   position: relative;
   width: 620px;
-  margin: 30px auto;
+  margin:  auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.container:after
+.player:after
 {
   position: absolute;
   content: '';
@@ -35,17 +43,19 @@ body
 }
 
 .player
-{
+{ 
+  flex: 0 0 auto;
   position: relative;
-  background: blue;
-  border-radius: 0 0 11px 11px;
-  overflow: hidden;
+  width: 100%;
+  background: rgb(255, 80, 80);
+  border-radius: 11px 11px 11px 11px;
+  margin: auto;
 }
 
 .player-head
 {
   position: relative;
-  height: 250px;
+  /*height: 250px;*/
   overflow: hidden;
   text-align: center;
   box-shadow: inset 0 0 110px rgba(0,0,0,0.3);
@@ -130,10 +140,11 @@ body
   margin-right: 35px;
 }
 
-.player-controls i.active
+/*.player-controls i.active
 {
   color: rgba(255,255,255,0.7);
-}
+}*/
+
 
 .player-footer
 {
@@ -207,12 +218,12 @@ body
 
 .current-duration, .total-duration
 {
-  box-shadow: inset -40px 0 70px -40px rgba(0,0,0,0.1);
+  /*box-shadow: inset -40px 0 70px -40px rgba(0,0,0,0.1);*/
 }
 
 .song-controls .play
 {
-  b/*ox-shadow: inset 90px 10px 40px -10px #8f0031;*/
+  /*ox-shadow: inset 90px 10px 40px -10px #8f0031;*/
 }
 
 .song-controls span .fa-play
