@@ -29,4 +29,4 @@ VALUES
     ("Jazz"),
     ("Blues"),
     ("Folk"),
-    ("Polka");
+    ("Post Teen Pop");

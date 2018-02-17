@@ -15,6 +15,7 @@ CREATE TABLE users
     user_image varchar (255) NOT NULL,
     user_subscription varchar (255) NOT NULL,
 	PRIMARY KEY (user_id)
+  FOREIGN KEY (track_id) REFERENCES music (id)
 );
 
   CREATE TABLE music
@@ -23,6 +24,7 @@ CREATE TABLE users
     track_name varchar (255) NOT NULL,
     track_artist varchar (255) NOT NULL,
     track_genre varchar (255) NOT NULL,
+    track_artwork varchar (255) not null,
     track_popularity integer (255) NOT NULL,
     PRIMARY KEY (track_id),
     user_id int NOT NULL,
@@ -30,8 +32,9 @@ CREATE TABLE users
 );
 
     CREATE TABLE genres
-    (
-      id int AUTO_INCREMENT,
+  (
+    id int AUTO_INCREMENT,
+    genre varchar (255) not null,
     pseudo_genre varchar (255) NOT NULL,
     FOREIGN KEY (track_id) REFERENCES music (id)
 );
