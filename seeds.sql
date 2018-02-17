@@ -22,13 +22,12 @@ INSERT INTO genres
     (pseudo_genre, genre)
 VALUES
     ("Rock", "Rock"),
-    ("Pop"
-"Pop"),
-("Country", "Country"),
-("Rap", "Rap"),
-("Metal", "Metal"),
-("R&B", "R&B"),
-("Jazz", "Jazz"),
-("Blues", "Blues"),
-("Folk", "Folk"),
-("Post Teen Pop", "Post Teen Pop");
+    ("Pop""Pop"),
+    ("Country", "Country"),
+    ("Rap", "Rap"),
+    ("Metal", "Metal"),
+    ("R&B", "R&B"),
+    ("Jazz", "Jazz"),
+    ("Blues", "Blues"),
+    ("Folk", "Folk"),
+    ("Post Teen Pop", "Post Teen Pop");
