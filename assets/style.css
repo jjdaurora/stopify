@@ -29,6 +29,7 @@ p {
    background-color: #f8f8f8;
    border-color: #e7e7e7;
    width: 100%
+   margin-bottom: 150px;
 
 }
 
@@ -43,7 +44,6 @@ p {
 .audio-buttons {
 
 		max-width: 50%;
-		background-color: red;
 }
 
 .glyphicon.glyphicon-backward {
@@ -65,10 +65,11 @@ p {
 
 #display-background {
 
-	padding-top: 300px;
+	/*padding-top: 300px;*/
 	padding-bottom: 30px;
 	height: 600px;
 	max-width: 60%;
 	background-color: black;
+	margin-top: 150;
 
 }
