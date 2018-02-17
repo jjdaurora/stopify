@@ -1,4 +1,5 @@
-SELECT * FROM music;
+SELECT *
+FROM music;
 
 INSERT INTO music
     (track_name, track_artist, track_genre, track_popularity )
@@ -10,23 +11,24 @@ VALUES
     ("Worthy to Say Hi", "Nickelback", "Rock", "0"),
     ("Stars are Blind", "Paris Hilton", "Rock", "0"),
     ("My Humps", "Black Eyed Peas", "Dance", "0"),
-    ("Achy Breaky Heart", "Billy Ray Cyrus", "Rock", "0"),
-    ("Rockstar", "Nickelback", "Rock","0"),
+    ("Achy Breaky Heart", "Billy Ray Cyrus", "Country", "0"),
+    ("Rockstar", "Nickelback", "Rock", "0"),
     ("Nookie", "Limp Bizkit", "Rap", "0");
 
 SELECT *
 FROM genres;
 
 INSERT INTO genres
-    (pseudo_genre )
+    (pseudo_genre, genre)
 VALUES
-    ("Rock"),
-    ("Pop"),
-    ("Country"),
-    ("Rap"),
-    ("Metal"),
-    ("R&B"),
-    ("Jazz"),
-    ("Blues"),
-    ("Folk"),
-    ("Post Teen Pop");
+    ("Rock", "Rock"),
+    ("Pop"
+"Pop"),
+("Country", "Country"),
+("Rap", "Rap"),
+("Metal", "Metal"),
+("R&B", "R&B"),
+("Jazz", "Jazz"),
+("Blues", "Blues"),
+("Folk", "Folk"),
+("Post Teen Pop", "Post Teen Pop");

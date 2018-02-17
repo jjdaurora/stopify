@@ -10,26 +10,96 @@
 var db = require("../models");
 
 // Routes
+// *********************************************************************************
+// api-routes.js - this file offers a set of routes for displaying and saving data to the db
+// *********************************************************************************
+
+// Dependencies
 // =============================================================
-module.exports = function(app) {
 
-  // GET route for getting all of the todos
-  app.get("/api/todos", function(req, res) {
+// Requiring our Music model
+var db = require("../models");
 
+// Routes
+// =============================================================
+module.exports = function (app) {
+
+  // GET route for getting all of the Musics
+  app.get("/api/music", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Music.findAll({}).then(function (dbMusic) {
+      // We have access to the Musics as an argument inside of the callback function
+      res.json(dbMusic);
+    });
   });
 
-  // POST route for saving a new todo. You can create a todo using the data on req.body
-  app.post("/api/todos", function(req, res) {
-
+  app.get("/api/user", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.User.findAll({}).then(function (dbUser) {
+      // We have access to the Musics as an argument inside of the callback function
+      res.json(dbUser);
+    });
   });
 
-  // DELETE route for deleting todos. You can access the todo's id in req.params.id
-  app.delete("/api/todos/:id", function(req, res) {
-
+  app.get("/api/genre", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Genre.findAll({}).then(function (dbGenre) {
+      // We have access to the Musics as an argument inside of the callback function
+      res.json(dbGenre);
+    });
   });
 
-  // PUT route for updating todos. The updated todo will be available in req.body
-  app.put("/api/todos", function(req, res) {
+  // POST route for saving a new Music
+  app.post("/api/music", function (req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.Music.create({
+      text: req.body.text,
+      complete: req.body.complete
+    }).then(function (dbMusic) {
+      // We have access to the new Music as an argument inside of the callback function
+      res.json(dbMusic);
+    });
+  });
+
+  app.post("/api/user", function (req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.User.create({
+      text: req.body.text,
+      complete: req.body.complete
+    }).then(function (dbUser) {
+      // We have access to the new User as an argument inside of the callback function
+      res.json(dbUser);
+    });
+  });
+
+  app.post("/api/user", function (req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.User.create({
+      text: req.body.text,
+      complete: req.body.complete
+    }).then(function (dbUser) {
+      // We have access to the new User as an argument inside of the callback function
+      res.json(dbUser);
+    });
+  });
+
+  // PUT route for updating Musics. We can get the updated Music from req.body
+  app.put("/api/musics", function (req, res) {
+
+  });
+  app.put("/api/user", function (req, res) {
+
+  });
+  app.put("/api/genre", function (req, res) {
 
   });
 };
