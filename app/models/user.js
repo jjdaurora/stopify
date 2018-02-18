@@ -35,6 +35,15 @@ module.exports = function (sequelize, DataTypes) {
             len: [1]
         }
     },
+    user_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+    },
 
 });
 return User;

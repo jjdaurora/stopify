@@ -15,6 +15,15 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        genre_id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
     });
     return Genre;
    

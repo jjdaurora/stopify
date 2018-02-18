@@ -17,9 +17,6 @@ var db = require("../models");
 // Dependencies
 // =============================================================
 
-// Requiring our Music model
-var db = require("../models");
-
 // Routes
 // =============================================================
 module.exports = function (app) {
@@ -55,10 +52,9 @@ module.exports = function (app) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
-    db.Music.create({
-      text: req.body.text,
-      complete: req.body.complete
-    }).then(function (dbMusic) {
+    db.Music.create( req.body
+    
+    ).then(function (dbMusic) {
       // We have access to the new Music as an argument inside of the callback function
       res.json(dbMusic);
     });
@@ -69,26 +65,24 @@ module.exports = function (app) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
-    db.User.create({
-      text: req.body.text,
-      complete: req.body.complete
-    }).then(function (dbUser) {
+    db.User.create(
+      req.body
+  ).then(function (dbUser) {
       // We have access to the new User as an argument inside of the callback function
       res.json(dbUser);
     });
   });
 
-  app.post("/api/user", function (req, res) {
+  app.post("/api/genre", function (req, res) {
     console.log(req.body);
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
-    db.User.create({
-      text: req.body.text,
-      complete: req.body.complete
-    }).then(function (dbUser) {
-      // We have access to the new User as an argument inside of the callback function
-      res.json(dbUser);
+    db.Genre.create(
+      req.body
+    ).then(function (dbGenre) {
+      // We have access to the new Genre as an argument inside of the callback function
+      res.json(dbGenre);
     });
   });
 
