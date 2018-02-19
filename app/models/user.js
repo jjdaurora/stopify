@@ -14,20 +14,6 @@ module.exports = function (sequelize, DataTypes) {
             len: [1]
         }
     },
-    user_liked_tracks: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1]
-        }
-    },
-    user_disliked_tracks: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1]
-        }
-    },
     spotify_id: {
         type: DataTypes.INTEGER,
         allowNull: false,

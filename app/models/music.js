@@ -44,6 +44,28 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        
     });
+    Music.associate = function (models) {
+        // Associating Music with Posts
+        // When an Music is deleted, also delete any associated Posts
+        Music.hasOne(models.User, {
+            onDelete: "cascade"
+        });
+    }
+    Music.associate = function (models) {
+        // Associating Music with Posts
+        // When an Music is deleted, also delete any associated Posts
+        Music.hasOne(models.Genre, {
+            onDelete: "cascade"
+        });
+    }
+    Music.associate = function (models) {
+        // Associating Music with Posts
+        // When an Music is deleted, also delete any associated Posts
+        Music.hasOne(models.TrackFeedback, {
+            onDelete: "cascade"
+        });
+    }
     return Music;
 };

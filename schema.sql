@@ -12,10 +12,6 @@ CREATE TABLE users
   (255) NOT NULL,
   user_email varchar
   (255) NOT NULL,
-  user_liked_tracks varchar
-  (255) NOT NULL,
-  user_disliked_tracks varchar
-  (255) NOT NULL,
   spotify_id int NOT NULL,
   user_image varchar
   (255) NOT NULL,
@@ -56,12 +52,34 @@ CREATE TABLE users
       (255) NOT NULL,
     PRIMARY KEY
       (track_id),
-    user_id int NOT NULL,
-    genre_id int not null,
+   user_music int,
+    genre_music int,
+    index
+      (user_music, genre_music),
     FOREIGN KEY
-      (user_id) REFERENCES users
+      (user_music) REFERENCES users
       (user_id),
     foreign key
-      (genre_id) references genres
+      (genre_music) references genres
       (genre_id)
+);
+
+      drop table if exists track_feedback;
+      CREATE TABLE track_feedback
+      (
+        no INT NOT NULL
+        AUTO_INCREMENT,
+  user_feedback int,
+  track_feedback int,
+  feedback BOOLEAN DEFAULT false,
+  primary key
+        (no),
+  index
+        (user_feedback, track_feedback),
+  FOREIGN KEY
+        (user_feedback) REFERENCES users
+        (user_id),
+      FOREIGN KEY
+        (track_feedback) REFERENCES music
+        (track_id)
 );

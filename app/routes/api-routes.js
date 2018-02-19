@@ -46,6 +46,14 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/api/trackfeedback", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.TrackFeedback.findAll({}).then(function (dbTrackFeedback) {
+      // We have access to the Musics as an argument inside of the callback function
+      res.json(dbTrackFeedback);
+    });
+  })
+
   // POST route for saving a new Music
   app.post("/api/music", function (req, res) {
     console.log(req.body);
@@ -85,6 +93,18 @@ module.exports = function (app) {
       res.json(dbGenre);
     });
   });
+  app.post("/api/trackfeedback", function (req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.TrackFeedback.create(
+      req.body
+    ).then(function (dbTrackFeedback) {
+      // We have access to the new TrackFeedback as an argument inside of the callback function
+      res.json(dbTrackFeedback);
+    });
+  });
 
   // PUT route for updating Musics. We can get the updated Music from req.body
   app.put("/api/musics", function (req, res) {
@@ -94,6 +114,9 @@ module.exports = function (app) {
 
   });
   app.put("/api/genre", function (req, res) {
+
+  });
+  app.put("/api/trackfeedback", function (req, res) {
 
   });
 };
