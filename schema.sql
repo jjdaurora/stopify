@@ -52,17 +52,17 @@ CREATE TABLE users
       (255) NOT NULL,
     PRIMARY KEY
       (track_id),
-   user_music int not null,
-    genre_music int not null,
+   user_id int not null,
+    genre_id int not null,
     index
-      (user_music, genre_music),
+      (user_id, genre_id),
      constraint FOREIGN KEY
-      (user_music) REFERENCES users
+      (user_id) REFERENCES users
       (user_id)
       ON
       UPDATE CASCADE,
     constraint foreign key
-      (genre_music) references genres
+      (genre_id) references genres
       (genre_id)
       ON
       UPDATE CASCADE
@@ -78,15 +78,17 @@ CREATE TABLE users
   feedback BOOLEAN DEFAULT false,
   primary key
         (feedback_id),
+  user_id int not null,
+  track_id int not null,
   index
-        (user_feedback, track_feedback),
+        (user_id, track_id),
  constraint FOREIGN KEY
-        (user_feedback) REFERENCES users
+        (user_id) REFERENCES users
         (user_id)
       ON
         UPDATE CASCADE,
      constraint FOREIGN KEY
-        (track_feedback) REFERENCES music
+        (track_id) REFERENCES music
         (track_id)
       ON
         UPDATE CASCADE

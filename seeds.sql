@@ -12,10 +12,10 @@ SELECT *
 FROM music;
 
 INSERT INTO music
-    (track_name, track_artist, track_genre, track_artwork, track_popularity )
+    (track_name, track_artist, track_genre, track_artwork, track_popularity)
 VALUES
     ("She Hates Me", "Puddle of Mud", "Rock", "picture", "0"),
-    ("Pedal to the Medal", "Kazzer", "Rock", "picture", "0"),
+    ("Pedal to the Medal", "Kazzer", "Rock", "picture", "0" ),
     ("Louis XIV", "Find Out True Love is Blind", "Rock", "picture", "0"),
     ("Photograph", "Nickelback", "Rock", "picture", "0"),
     ("Worthy to Say Hi", "Nickelback", "Rock", "picture", "0"),
@@ -41,6 +41,7 @@ VALUES
     ("Blues", "Blues"),
     ("Folk", "Folk"),
     ("Post Teen Pop", "Post Teen Pop");
+
 
 
 SELECT *
