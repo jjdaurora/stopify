@@ -52,34 +52,42 @@ CREATE TABLE users
       (255) NOT NULL,
     PRIMARY KEY
       (track_id),
-   user_music int,
-    genre_music int,
+   user_music int not null,
+    genre_music int not null,
     index
       (user_music, genre_music),
-    FOREIGN KEY
+     constraint FOREIGN KEY
       (user_music) REFERENCES users
-      (user_id),
-    foreign key
+      (user_id)
+      ON
+      UPDATE CASCADE,
+    constraint foreign key
       (genre_music) references genres
       (genre_id)
+      ON
+      UPDATE CASCADE
 );
 
       drop table if exists track_feedback;
       CREATE TABLE track_feedback
       (
-        no INT NOT NULL
+        feedback_id INT NOT NULL
         AUTO_INCREMENT,
-  user_feedback int,
-  track_feedback int,
+  user_feedback int not null,
+  track_feedback int not null,
   feedback BOOLEAN DEFAULT false,
   primary key
-        (no),
+        (feedback_id),
   index
         (user_feedback, track_feedback),
-  FOREIGN KEY
+ constraint FOREIGN KEY
         (user_feedback) REFERENCES users
-        (user_id),
-      FOREIGN KEY
+        (user_id)
+      ON
+        UPDATE CASCADE,
+     constraint FOREIGN KEY
         (track_feedback) REFERENCES music
         (track_id)
+      ON
+        UPDATE CASCADE
 );
