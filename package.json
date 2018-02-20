@@ -1,0 +1,33 @@
+{
+  "name": "stopify",
+  "version": "1.0.0",
+  "description": "A music app filled with comedy. The music you love to hate.",
+  "main": "player.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjdaurora/stopify.git"
+  },
+  "keywords": [
+    "music",
+    "flamingo",
+    "spotify"
+  ],
+  "author": "Newman Posey, Amanda Mates, JJ D'Aurora, London Vayavong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjdaurora/stopify/issues"
+  },
+  "homepage": "https://github.com/jjdaurora/stopify#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "node-spotify-api": "^1.0.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
