@@ -51,21 +51,8 @@ CREATE TABLE users
     track_popularity integer
       (255) NOT NULL,
     PRIMARY KEY
-      (track_id),
-   user_id int not null,
-    genre_id int not null,
-    index
-      (user_id, genre_id),
-     constraint FOREIGN KEY
-      (user_id) REFERENCES users
-      (user_id)
-      ON
-      UPDATE CASCADE,
-    constraint foreign key
-      (genre_id) references genres
-      (genre_id)
-      ON
-      UPDATE CASCADE
+      (track_id)
+   
 );
 
       drop table if exists track_feedback;
@@ -78,18 +65,6 @@ CREATE TABLE users
   feedback BOOLEAN DEFAULT false,
   primary key
         (feedback_id),
-  user_id int not null,
-  track_id int not null,
-  index
-        (user_id, track_id),
- constraint FOREIGN KEY
-        (user_id) REFERENCES users
-        (user_id)
-      ON
-        UPDATE CASCADE,
-     constraint FOREIGN KEY
-        (track_id) REFERENCES music
-        (track_id)
-      ON
-        UPDATE CASCADE
+  
+  
 );

@@ -48,7 +48,7 @@ SELECT *
 FROM track_feedback;
 
 insert into track_feedback
-    (track_id, feedback)
+    ( feedback)
 VALUES
-    (2, true),
-    (1, false);
+    ( true),
+    (false);

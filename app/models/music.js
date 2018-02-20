@@ -46,26 +46,27 @@ module.exports = function (sequelize, DataTypes) {
         },
         
     });
-    Music.associate = function (models) {
-        // Associating Music with Posts
-        // When an Music is deleted, also delete any associated Posts
-        Music.hasOne(models.User, {
-            onDelete: "cascade"
-        });
-    }
-    Music.associate = function (models) {
-        // Associating Music with Posts
-        // When an Music is deleted, also delete any associated Posts
-        Music.hasOne(models.Genre, {
-            onDelete: "cascade"
-        });
-    }
-    Music.associate = function (models) {
-        // Associating Music with Posts
-        // When an Music is deleted, also delete any associated Posts
-        Music.hasOne(models.TrackFeedback, {
-            onDelete: "cascade"
-        });
-    }
+    // Music.associate = function (models) {
+    //     // Associating Music with Posts
+    //     // When an Music is deleted, also delete any associated Posts
+    //     Music.belongsTo(models.User, {
+    //         onDelete: "cascade",
+    //     });
+    // }
+    // Music.associate = function (models) {
+    //     // Associating Music with Posts
+    //     // When an Music is deleted, also delete any associated Posts
+    //     Music.belongsTo(models.Genre, {
+    //         onDelete: "cascade",
+            
+    //     });
+    // }
+    // Music.associate = function (models) {
+    //     // Associating Music with Posts
+    //     // When an Music is deleted, also delete any associated Posts
+    //     Music.belongsTo(models.TrackFeedback, {
+    //         onDelete: "cascade",
+    //     });
+    // }
     return Music;
 };
