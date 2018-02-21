@@ -132,12 +132,12 @@ body .container
   color: rgba(255,255,255,1);
   font-size: 31px;
   padding-top: 25px;
-  padding-left: 35px;
+  /*padding-left: 35px;*/
 }
 
 .player-controls i
 {
-  margin-right: 35px;
+  /*margin-right: 35px;*/
 }
 
 /*.player-controls i.active

@@ -1,0 +1,41 @@
+/*body {
+	background-image: url("flamingoOne.png");
+}*/
+body {
+	width: 100vw;
+	background-color: black;
+}
+
+.main-container {
+	height: 100vh;
+	min-width: 100%;
+}
+
+.image-container {
+	background-image: url(img/flamingoTwo.png);
+	background-repeat: no-repeat;
+  background-size: auto;
+	height: 100%;
+}
+
+h1 {
+
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+p {
+
+	text-align: center;
+
+}
+
+.button-container {
+
+	text-align: center;
+
+}
+
+.btn {
+	margin-top: 50px;
+}

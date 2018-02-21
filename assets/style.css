@@ -13,9 +13,16 @@
 body, html
 {
   font-family: Verdana, sans-serif;
-  /*overflow: hidden;*/
+  min-width : 1224px;
+  background-image: url(../img/flamingoOne.png);
 }
 
+nav {
+	color: white;
+	text-align: center;
+	min-width: 100%;
+	margin-bottom: 10px;
+}
 
 body .container
 {
@@ -129,10 +136,31 @@ body .container
 .player-controls
 {
   display: block;
+  margin-top: 25px;
+}
+
+.like {
+	/*max-width: 50%;
+	display: block;*/
+  color: rgba(255,255,255,1);
+  float: right;
+  font-size: 31px;
+  /*margin-left: 55px;*/
+  margin-right: 135px;
+  padding-right: 25px;
+
+
+}
+
+.dislike {
+	/*max-width: 50%;
+	display: block;*/
   color: rgba(255,255,255,1);
   font-size: 31px;
-  padding-top: 25px;
-  padding-left: 35px;
+  margin-right: 60px;
+  /*padding-top: 10px;*/
+
+
 }
 
 .player-controls i
@@ -192,7 +220,7 @@ body .container
   border: 7px solid #a00035;
   background: #ffffff;
   border-radius: 100%;
-  margin-top: -8.5px;
+  margin-top: -3.5px;
   margin-left: 30%;
   box-shadow: 3px 2px 5px rgba(0,0,0,0.3);
 }
@@ -232,4 +260,10 @@ body .container
   font-size: 27px;
   margin-top: 26px;
   margin-left: -11px;
+}
+
+/*Welcome Page*/
+
+.main-container {
+	background-image: url("flamingoOne.png");
 }
