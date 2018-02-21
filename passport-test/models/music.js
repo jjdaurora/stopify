@@ -6,6 +6,10 @@ module.exports = function (sequelize, DataTypes) {
         autoIncrement: true,
         allowNull: false
       },
+      spotifyTrackID: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       trackName: {
         type: DataTypes.STRING,
         allowNull: false
