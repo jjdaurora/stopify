@@ -1,36 +1,28 @@
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
-      userId: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false,
-        underscored: true
-      },
       userName: {
         type: DataTypes.STRING,
         allowNull: false,
-        underscored: true
       },
       userEmail: {
         type: DataTypes.STRING,
         allowNull: false,
-        underscored: true
       },
       spotifyId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        underscored: true
-      },
-      userImage: {
         type: DataTypes.STRING,
         allowNull: false,
-        underscored: true
       },
-      authenticationToken: {
+      accessToken: {
         type: DataTypes.STRING,
         allowNull: false,
-        underscored: true
+      },
+      // userImage: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false,
+      // }
+      refreshToken: {
+        type: DataTypes.STRING,
+        allowNull: false,
       }
     });
 

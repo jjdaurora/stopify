@@ -27,9 +27,7 @@ module.exports = function(app) {
           clientID: client_id,
           clientSecret: client_secret,
           callbackURL: "http://localhost:8888/callback",
-          scope: ["user-read-email", "user-read-private", "user-top-read"],
-          passReqToCallback: true,
-          profileFields: ["id", "emails", "name"]
+          scope: ["user-read-email", "user-read-private", "user-top-read"]
         },
         function(accessToken, refreshToken, expires_in, profile, done) {
           db.User.findOrCreate({
@@ -38,10 +36,10 @@ module.exports = function(app) {
             },
             defaults: {
               userName: profile.displayName,
-              userEmail: profile.emails[0],
+              userEmail: profile.emails[0].value,
               spotifyId: profile.id,
-              authenticationToken: accessToken,
-              userImage: profile.photos[0],
+              accessToken: accessToken,
+            //   userImage: profile.photos[0].value,
               refreshToken: refreshToken
             }
           })

@@ -1,33 +1,34 @@
 module.exports = function (sequelize, DataTypes) {
     var Music = sequelize.define("Music", {
-      track_id: {
+      trackId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
       },
-      track_name: {
+      trackName: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      track_artist: {
+      trackArtist: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      track_genre: {
+      trackGenre: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      track_artwork: {
+      trackArtwork: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      track_popularity: {
+      trackPopularity: {
         type: DataTypes.STRING,
         allowNull: false
       }
     
     });
+  
       Music.associate = function(models) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
