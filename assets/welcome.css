@@ -12,7 +12,7 @@ body {
 }
 
 .image-container {
-	background-image: url(img/flamingoTwo.png);
+	background-image: url(img/fla1.png);
 	background-repeat: no-repeat;
   background-size: auto;
 	height: 100%;
@@ -43,6 +43,5 @@ p {
 
 #no-margin {
 
-	background-color: f44842
 	margin-bottom: 0px;
 }
