@@ -27,7 +27,7 @@ module.exports = function(app) {
           clientID: client_id,
           clientSecret: client_secret,
           callbackURL: "http://localhost:8888/callback",
-          scope: ["user-read-email", "user-read-private", "user-top-read"]
+          scope: ["user-read-email", "user-read-private", "user-top-read", "streaming"]
         },
         function(accessToken, refreshToken, expires_in, profile, done) {
           db.User.findOrCreate({

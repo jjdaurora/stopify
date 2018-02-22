@@ -2,6 +2,10 @@ var express = require('express');
 var session = require('express-session');
 var passport = require('passport');
 var app = express();
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main"})); 
+app.set("view engine", "handlebars");
 
 // configure middleware
 app.use(require('cookie-parser')());
@@ -25,11 +29,28 @@ app.get(
 
         client.getTopTracks()
             .then(function(result) {
-                res.json(result);
+                
+                res.render('toptracks', {track: result});
             })
             .catch(next);
     }
 );
+
+app.get(
+    '/music',
+    // passport.authorize('spotify'), 
+    function (req, res, next) {
+        var client = new SpotifyClient({
+            accessToken: req.user.accessToken
+        });
+
+        client.getAllMusic()
+            .then(function (result) {
+
+                res.render('music', { music: result });
+            })
+         
+    });
 
 // DO NOT sync in production
 var db = require('./models');
