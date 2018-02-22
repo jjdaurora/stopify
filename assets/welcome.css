@@ -37,5 +37,12 @@ p {
 }
 
 .btn {
-	margin-top: 50px;
+	margin-top: 250px;
+	background-color: lightgreen;
+}
+
+#no-margin {
+
+	background-color: f44842
+	margin-bottom: 0px;
 }

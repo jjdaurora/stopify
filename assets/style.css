@@ -14,7 +14,6 @@ body, html
 {
   font-family: Verdana, sans-serif;
   min-width : 1224px;
-  background-image: url(../img/flamingoOne.png);
 }
 
 nav {
@@ -133,10 +132,19 @@ body .container
   text-transform: uppercase;
 }
 
+.artist {
+
+	display: block;
+  font-size: 14px;
+  color: #fffffb;
+  padding: 15px 0 5px 0;
+  text-transform: uppercase;
+}
+
 .player-controls
 {
   display: block;
-  margin-top: 25px;
+  /*margin-top: 25px;*/
 }
 
 .like {
