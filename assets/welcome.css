@@ -2,8 +2,17 @@
 	background-image: url("flamingoOne.png");
 }*/
 body {
-	width: 100vw;
-	background-color: black;
+	
+	margin: 0;
+	height: 100vh;
+	overflow: hidden;
+	padding: 0;
+}
+
+#full-size{
+	height: 100%
+	width: 100%;
+	overflow: hidden; 
 }
 
 .main-container {
@@ -40,11 +49,18 @@ p {
 .button-container {
 	text-align: center;
 
+
 }
 
 .btn {
 	margin-top: 250px;
+	background-color: black;
+	color: white;
 	
+}
+
+.btn:hover {
+	cursor: pointer;
 }
 
 #no-margin {
