@@ -4,45 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Stopify</title>
-    {{!-- <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    <script>
-        window.onSpotifyWebPlaybackSDKReady = () => {
-            // You can now initialize Spotify.Player and use the SDK
-            const player = new Spotify.Player({
-                name: 'Web Playback SDK Quick Start Player',
-                // getOAuthToken: cb => { cb(token); }
-            });
-
-
-
-            // 'use strict';
-
-            var play = function play(_ref) {
-                var spotify_uri = _ref.spotify_uri,
-                    _ref$playerInstance$_ = _ref.playerInstance._options,
-                    getOAuthToken = _ref$playerInstance$_.getOAuthToken,
-                    id = _ref$playerInstance$_.id;
-
-                // getOAuthToken(function (access_token) {
-                fetch('https://api.spotify.com/v1/me/player/play?device_id=' + id, {
-                    method: 'PUT',
-                    body: JSON.stringify({ uris: [spotify_uri] }),
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer BQCD3EyBHawqw4lNl9vi6vmglZF0XKKPi38JTj968GvWEERVRbHeENHLWx1KgqYFOepcDtWyE0kZWXi0Ik0KEH9m5ziN-IXtLmj2TrG63amG96Mn7Hi_dCRrLmKmPDkxGdndGWfKo1IUdagcsgE9a72bfYmcCNJNI12h9bAVCm8'
-                    }
-                });
-                // });
-            };
-
-
-            play({
-                playerInstance: new Spotify.Player({ name: "..." }),
-                spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr'
-            });
-        };
-    </script> --}}
+    
 </head>
+<body class="bg-gradient">
+        <!-- <div class="row">
+        <div class="col-lg-12">
+            <nav class="navbar navbar-light" style="background-color: #f44842;">
+                <a class="navbar-brand" href="#">Stopify</a>
+                </nav>
+        </div>
+    </div> -->
+
+  <div class="container">   
+        <div class="player">
+          <div class="player-head">
+            <img src="assets/img/manonthemoon.png" alt="cover" class="song-cover">
+          </div>
+          <div class="player-body">
+            <img src="assets/img/manonthemoon.png" alt="cover" class="song-cover">
+            <div class="album-info">
+              <span class="album-title">
+                Man On the Moon: The End of Day
+              </span>
+              <span class="song-title">
+                Pursuit of Happiness
+              </span>
+              <span class="artist">
+                Kid Cudi
+              </span>
+              <span class="player-controls">
+                <span class="dislike">
+                <i class="far fa-frown"></i>
+                </span>
+                <span class="like">
+                <i class="far fa-smile"></i>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="player-footer">
+            <div class="player-seekbar">
+              <span class="player-knot"></span>
+            </div>
+            <div class="song-controls">
+              <span class="current-duration">
+                01:03
+              </span><span class="play">
+                <i class="fa fa-play"></i>
+              </span><span class="total-duration">
+                04:03
+              </span>
+            </div>
+          </div>
+        </div>
+  </div>
+</body>
+</html>
+
 
 <body>
     {{{ body }}}
