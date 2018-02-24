@@ -10,7 +10,8 @@ var jshint = require('gulp-jshint');
 // gulp.src - point to files to user
 // gulp.dest - point to folder to output
 // gulp.watch - watch files and folders for
-// In order to run gulp, type 'npm run gulp' 
+// In order to run gulp, type 'npm run gulp + taskname' 
+// Type 'npm run gulp' will run minify and lint tasks and create public directory
 
 
 // logs message
