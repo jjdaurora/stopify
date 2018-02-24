@@ -10,6 +10,7 @@ var jshint = require('gulp-jshint');
 // gulp.src - point to files to user
 // gulp.dest - point to folder to output
 // gulp.watch - watch files and folders for
+// In order to run gulp, type 'npm run gulp' 
 
 
 // logs message
@@ -31,11 +32,16 @@ gulp.task('imageMin', () =>
 );
 
 // minify js
-gulp.task('minify', function() {
-  gulp.src('src/js/*.js')
+gulp.task('minifyModels', function() {
+  gulp.src('app/models/*.js')
     .pipe(uglify())
-      .pipe(gulp.dest('public/js'));
+      .pipe(gulp.dest('app/public/models'));
   });
+gulp.task('minifyRoutes', function () {
+  gulp.src('app/routes/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('app/public/routes'));
+});
 
 // compile sass
 gulp.task('sass', function(){
@@ -45,11 +51,17 @@ gulp.task('sass', function(){
 });
 
 // Lint Task
-gulp.task('lint', function () {
-  return gulp.src('app/src/js/*js')
+gulp.task('lintModels', function () {
+  return gulp.src('app/models/*js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
+gulp.task('lintRoutes', function () {
+  return gulp.src('app/routes/*js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
 
 //scripts
 gulp.task('script', function(){
@@ -58,7 +70,7 @@ gulp.task('script', function(){
   // .pipe(uglify())
   .pipe(gulp.dest('public/js'))
 });
-gulp.task('default', ['minify', 'copyHtml', 'imageMin', 'script']);
+gulp.task('default', ['lintModels', 'lintRoutes','minifyModels', 'minifyRoutes']);
 
 gulp.task('watch', function(){
   gulp.watch('src/js/*.js', ['scripts']);
