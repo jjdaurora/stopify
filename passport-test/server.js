@@ -19,8 +19,7 @@ require('./passport')(app);
 
 var SpotifyClient = require('./spotifyClient');
 
-app.get(
-    '/', 
+app.get('/music', 
     // passport.authorize('spotify'), 
     function(req, res, next) {
         var client = new SpotifyClient({
@@ -30,26 +29,25 @@ app.get(
         client.getTopTracks()
             .then(function(result) {
                 
-                res.render('toptracks', {track: result});
+                res.render('toptracks', { track: result});
             })
             .catch(next);
-    }
-);
+    });
 
-app.get(
-    '/music',
+app.get('/nextTrack',
     // passport.authorize('spotify'), 
     function (req, res, next) {
         var client = new SpotifyClient({
             accessToken: req.user.accessToken
         });
 
-        client.getAllMusic()
+        client.getNextTrack()
             .then(function (result) {
 
-                res.render('music', { music: result });
+                res.render('nextTrack', { nextTrack: result });
             })
-         
+          .catch(next);
+
     });
 
 // DO NOT sync in production

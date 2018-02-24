@@ -36,7 +36,7 @@ module.exports = function (sequelize, DataTypes) {
       Music.associate = function(models) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
-        Music.hasMany(models.Feedback, { onDelete: "cascade" });
+        Music.hasMany(models.Feedback, { onsDelete: "cascade" });
         Music.hasMany(models.Genre, { onDelete: "cascade"});
       };
     return Music;
